@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Hemanth Goud Burra | Electronics & AI Engineer">
     <meta property="og:description" content="Showcasing smart, efficient solutions through innovation in AI, IoT, and Electronics.">
-    <meta property="og:image" content="hemmuii.jpg">
+    <meta property="og:image" content="hemmuii.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -201,6 +201,33 @@
             50% { top: 15px; opacity: 1; }
             100% { top: 25px; opacity: 0; }
         }
+
+        /* Floating Instagram Button */
+        .insta-fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: rgba(30, 215, 96, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--trace-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--trace-color);
+            z-index: 100;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 15px rgba(30, 215, 96, 0.2);
+        }
+
+        .insta-fab:hover {
+            transform: scale(1.15) rotate(15deg);
+            background: var(--trace-color);
+            color: #050505;
+            box-shadow: 0 0 30px rgba(30, 215, 96, 0.6);
+        }
     </style>
 </head>
 <body class="circuit-bg">
@@ -213,6 +240,11 @@
             </clipPath>
         </defs>
     </svg>
+
+    <!-- Floating Instagram Button -->
+    <a href="https://www.instagram.com/hemanth_bhg_x11/" target="_blank" class="insta-fab" title="Follow me on Instagram">
+        <i data-lucide="instagram" size="28"></i>
+    </a>
 
     <header>
         <!-- Navigation -->
@@ -411,6 +443,13 @@
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <!-- Text Side -->
                     <div class="award-card p-8 md:p-12 rounded-3xl relative reveal overflow-hidden">
+                        <!-- KIYE Logo Circular Holder -->
+                        <div class="absolute top-6 right-6 w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#1ed760]/40 p-1 bg-black/40 backdrop-blur-md z-20 shadow-[0_0_15px_rgba(30,215,96,0.3)] group overflow-hidden">
+                            <div class="w-full h-full rounded-full overflow-hidden bg-white/5 flex items-center justify-center">
+                                <img src="kiye_logo.png" alt="KIYE" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/80?text=KIYE'">
+                            </div>
+                        </div>
+
                         <div class="absolute top-0 right-0 p-8 opacity-10">
                             <i data-lucide="award" size="120" class="text-[#1ed760]"></i>
                         </div>
