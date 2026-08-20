@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Hemanth Goud Burra | Electronics, AI & IoT Engineer Portfolio</title>
+    <meta name="title" content="Hemanth BHG | Electronics & AI Engineer Portfolio">
+    <meta name="description" content="Official portfolio of Hemanth Goud Burra, an Electronics & Communication Engineer based in Hyderabad specializing in AI, Machine Learning, IoT, YOLOv8, and Embedded Systems.">
+    <meta name="keywords" content="Hemanth Goud Burra, Hemanth Burra, Electronics Engineer Hyderabad, AI Engineer, IoT Developer, YOLOv8 Expert, Embedded Systems Engineer, Machine Learning, Vigyan Vaibhav 2K25 Coordinator">
+    <meta name="author" content="Hemanth Goud Burra">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://portfolio.hemanthgoudburra.com">
+    
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://portfolio.hemanthgoudburra.com/">
+    <meta property="og:title" content="Hemanth Goud Burra | Electronics & AI Engineer">
+    <meta property="og:description" content="Official portfolio of Hemanth Goud Burra, showcasing innovative solutions in AI, IoT, and Electronics Engineering.">
+    <meta property="og:image" content="https://portfolio.hemanthgoudburra.com/hemmuii.png">
+    <meta property="profile:first_name" content="Hemanth">
+    <meta property="profile:last_name" content="Burra">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://portfolio.hemanthgoudburra.com/">
+    <meta property="twitter:title" content="Hemanth Goud Burra | Electronics & AI Engineer">
+    <meta property="twitter:description" content="Official portfolio of Hemanth Goud Burra, showcasing innovative solutions in AI, IoT, and Electronics Engineering.">
+    <meta property="twitter:image" content="https://portfolio.hemanthgoudburra.com/hemmuii.png">
+
+    <!-- Structured Data (JSON-LD) for Google Knowledge Graph -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Hemanth BHG",
+      "alternateName": "Hemanth Burra",
+      "url": "https://portfolio.hemanthgoudburra.com",
+      "image": "https://portfolio.hemanthgoudburra.com/hemmuii.png",
+      "jobTitle": "Founder & CEO at Tech Roxx, Electronics & AI Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Tech Roxx"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://github.com/Hemanthbhgx11",
+        "https://www.linkedin.com/in/hemanth-goud-burra",
+        "https://www.instagram.com/hemanth_bhg_x11/",
+        "https://www.youtube.com/@techroxxyt"
+      ],
+      "knowsAbout": ["Artificial Intelligence", "YOLOv8", "Internet of Things (IoT)", "Embedded Systems", "NodeMCU", "Electronics Engineering", "Tech Mentorship", "Bootcamps"]
+    }
+    </script>
+
+    <!-- Tailwind CSS & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            /* Updated color palette for Light Silver, Black, and Orange */
+            --bg-silver: #e8ecf1; /* Light Silver */
+            --text-black: #0f172a; /* Deep Black/Slate */
+            --trace-color: #ff5500; /* Vibrant Orange */
+            --led-glow: rgba(255, 85, 0, 0.4);
+            --card-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            background-color: var(--bg-silver);
+            color: var(--text-black);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Circuit Pattern Background - Adjusted for Light Mode */
+        .circuit-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 85, 0, 0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transition: all 0.8s ease-out;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glow-text {
+            /* Adjusted for light mode readability */
+            text-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
+        }
+
+        /* Musical Rising Wave Effect */
+        .profile-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .musical-wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--trace-color);
+            opacity: 0;
+            animation: musical-pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        @keyframes musical-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+                border-width: 4px;
+            }
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+                border-width: 1px;
+            }
+        }
+
+        .profile-ring {
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 2px solid var(--trace-color);
+            box-shadow: 0 0 15px var(--led-glow);
+            z-index: 5;
+            background: transparent;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-silver);
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Squircle Mask */
+        .squircle-card {
+            aspect-ratio: 1/1;
+            clip-path: url(#squircle-path);
+            background: #fff;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        
+        .squircle-card:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+        
+        .squircle-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(10%) contrast(105%);
+            transition: filter 0.3s;
+        }
+        
+        .squircle-card:hover img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .pcb-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .pcb-card:hover {
+            border-color: var(--trace-color);
+            box-shadow: 0 10px 30px rgba(255, 85, 0, 0.15);
+            transform: scale(1.02);
+        }
+
+        .skill-tag {
+            background: rgba(255, 85, 0, 0.1);
+            border: 1px solid rgba(255, 85, 0, 0.3);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--trace-color);
+            color: white;
+        }
+
+        /* Achievement Card Special Styling - Light Mode */
+        .award-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 1) 0%, rgba(240, 242, 245, 0.9) 100%);
+            border: 1px solid rgba(255, 85, 0, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .mouse-scroll {
+            width: 25px;
+            height: 45px;
+            border: 2px solid var(--trace-color);
+            border-radius: 20px;
+            position: relative;
+        }
+        .mouse-scroll::before {
+            content: '';
+            width: 4px;
+            height: 8px;
+            background: var(--trace-color);
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            animation: mouse-move 2s infinite;
+        }
+        @keyframes mouse-move {
+            0% { top: 8px; opacity: 0; }
+            50% { top: 15px; opacity: 1; }
+            100% { top: 25px; opacity: 0; }
+        }
+
+        /* Floating Instagram Button */
+        .insta-fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--trace-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--trace-color);
+            z-index: 100;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 85, 0, 0.2);
+        }
+
+        .insta-fab:hover {
+            transform: scale(1.15) rotate(15deg);
+            background: var(--trace-color);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(255, 85, 0, 0.4);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 85, 0, 0.2);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="circuit-bg">
+
+    <!-- SVG Squircle Definition -->
+    <svg width="0" height="0" class="absolute">
+        <defs>
+            <clipPath id="squircle-path" clipPathUnits="objectBoundingBox">
+                <path d="M .5,0 C .1,0 0,.1 0,.5 C 0,.9 .1,1 .5,1 C .9,1 1,.9 1,.5 C 1,.1 .9,0 .5,0" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <!-- Floating Instagram Button -->
+    <a href="https://www.instagram.com/hemanth_bhg_x11/" target="_blank" class="insta-fab" title="Follow Hemanth Goud Burra on Instagram">
+        <i data-lucide="instagram" size="28"></i>
+    </a>
+
+    <header>
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full z-50 bg-[#e8ecf1]/90 backdrop-blur-md border-b border-black/5 transition-all duration-300">
+            <div class="max-w-6xl mx-auto px-6 py-2 flex justify-between items-center">
+                <div class="mono font-bold text-lg flex items-center gap-2 text-black">
+                    <span class="text-[#ff5500]">&lt;</span>
+                    <span>Hemanth Goud Burra</span>
+                    <span class="text-[#ff5500] font-normal">/</span>
+                    <span class="text-[#ff5500]">&gt;</span>
+                </div>
+                <div class="hidden lg:flex items-center gap-4 xl:gap-6 mono text-[10px] xl:text-xs uppercase tracking-widest text-slate-700 font-semibold">
+                    <a href="#about" class="hover:text-[#ff5500] transition-colors">About</a>
+                    <a href="#skills" class="hover:text-[#ff5500] transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-[#ff5500] transition-colors">Projects</a>
+                    <a href="#sessions" class="hover:text-[#ff5500] transition-colors">Bootcamps</a>
+                    <a href="#achievements" class="hover:text-[#ff5500] transition-colors text-[#ff5500]">Awards</a>
+                    <a href="#experience" class="hover:text-[#ff5500] transition-colors">Exp & Edu</a>
+                    <a href="#resources" class="hover:text-[#ff5500] transition-colors">Resources</a>
+                    
+                    <!-- Social & Phone Links -->
+                    <div class="flex items-center gap-4 ml-2 border-l border-black/10 pl-4 xl:pl-6 text-slate-500">
+                        <a href="https://www.instagram.com/hemanth_bhg_x11/" target="_blank" class="hover:text-[#ff5500] transition-colors" title="Instagram">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="tel:9550251208" class="hover:text-[#ff5500] transition-colors flex items-center gap-2" title="Call Me">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span class="text-[10px]">9550251208</span>
+                        </a>
+                    </div>
+
+                    <a href="#contact" class="px-3 py-1.5 bg-[#ff5500]/10 border border-[#ff5500] text-[#ff5500] rounded hover:bg-[#ff5500] hover:text-white transition-all font-bold">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="about" class="min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-12">
+            <div class="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-center">
+                
+                <div class="order-2 md:order-1 reveal active">
+                    <p class="mono text-[#ff5500] mb-4 text-sm tracking-tighter font-bold">&gt; SYSTEM_READY_V2.0</p>
+                    
+                    <!-- SEO Focus: H1 tag updated to strictly emphasize name for personal branding SEO -->
+                    <h1 class="text-5xl md:text-7xl font-extrabold mb-2 leading-tight text-black">
+                        Hemanth Goud <br/> <span class="text-[#ff5500] glow-text">Burra</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-slate-700 font-bold mb-6">Innovating Electronics & AI</h2>
+                    
+                    <p class="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed font-medium">
+                        I am a tech-driven engineer crafting efficient solutions through 
+                        <span class="text-[#ff5500] font-bold">Machine Learning</span>, <span class="text-[#ff5500] font-bold">IoT</span>, and <span class="text-[#ff5500] font-bold">AI</span> integration, while mentoring the next generation of engineers at Tech Roxx.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#sessions" class="px-8 py-3 bg-[#ff5500] text-white font-bold rounded-lg hover:shadow-[0_4px_20px_rgba(255,85,0,0.4)] transition-all">
+                            View Bootcamps
+                        </a>
+                        <a href="https://www.instagram.com/hemanth_bhg_x11/" target="_blank" class="flex items-center gap-2 px-8 py-3 border border-slate-300 bg-white text-slate-700 font-bold rounded-lg hover:border-[#ff5500] hover:text-[#ff5500] transition-all shadow-sm">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                            Instagram
+                        </a>
+                        <a href="https://www.linkedin.com/in/hemanth-goud-burra" target="_blank" class="flex items-center gap-2 px-8 py-3 border border-slate-300 bg-white text-slate-700 font-bold rounded-lg hover:border-[#ff5500] hover:text-[#ff5500] transition-all shadow-sm">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            LinkedIn
+                        </a>
+                        <a href="https://www.youtube.com/@techroxxyt/streams" target="_blank" class="flex items-center gap-2 px-8 py-3 border border-slate-300 bg-white text-slate-700 font-bold rounded-lg hover:border-[#ff5500] hover:text-[#ff5500] transition-all shadow-sm">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                            YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-1 md:order-2 flex justify-center items-center reveal active" style="transition-delay: 200ms;">
+                    <div class="profile-container">
+                        <!-- Musical Waves -->
+                        <div class="musical-wave" style="animation-delay: 0s"></div>
+                        <div class="musical-wave" style="animation-delay: 1s"></div>
+                        <div class="musical-wave" style="animation-delay: 2s"></div>
+                        
+                        <div class="profile-ring"></div>
+                        <!-- SEO Focus: Explicit alt text for the main portrait -->
+                        <img src="hemmuii.png" 
+                             alt="Portrait of Hemanth Goud Burra - Electronics and AI Engineer" 
+                             class="profile-image shadow-2xl bg-white"
+                             onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=300&h=300';">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20 hidden md:block reveal" style="transition-delay: 400ms;">
+                <div class="mouse-scroll"></div>
+            </div>
+        </section>
+
+        <!-- Stats Grid -->
+        <section class="py-12 px-6">
+            <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="pcb-card p-6 rounded-xl text-center reveal">
+                    <h3 class="text-3xl font-extrabold text-[#ff5500]">CEO</h3>
+                    <p class="mono text-[10px] text-slate-600 font-bold uppercase mt-2">Tech Roxx</p>
+                </div>
+                <div class="pcb-card p-6 rounded-xl text-center reveal" style="transition-delay: 100ms;">
+                    <h3 class="text-3xl font-extrabold text-[#ff5500]">YOLOv8</h3>
+                    <p class="mono text-[10px] text-slate-600 font-bold uppercase mt-2">Vision Expert</p>
+                </div>
+                <div class="pcb-card p-6 rounded-xl text-center reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-3xl font-extrabold text-[#ff5500]">IoT</h3>
+                    <p class="mono text-[10px] text-slate-600 font-bold uppercase mt-2">Embedded Systems</p>
+                </div>
+                <div class="pcb-card p-6 rounded-xl text-center reveal" style="transition-delay: 300ms;">
+                    <h3 class="text-3xl font-extrabold text-[#ff5500]">2023+</h3>
+                    <p class="mono text-[10px] text-slate-600 font-bold uppercase mt-2">Coordinator Exp</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 px-6 bg-black/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal">
+                    <div>
+                        <h2 class="text-4xl font-extrabold mono text-black"><span class="text-[#ff5500]">01.</span> Technical_Stack</h2>
+                        <p class="text-slate-600 mt-2 font-medium">Firmware, Hardware, AI Tools, and Educational Skills mastered by Hemanth Goud Burra.</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <article class="space-y-8 reveal" style="transition-delay: 100ms;">
+                        <div class="pcb-card p-8 rounded-2xl relative group h-full">
+                            <i data-lucide="binary" class="text-[#ff5500] mb-6 w-8 h-8"></i>
+                            <h3 class="text-xl font-extrabold text-black mb-4">Firmware & Logic</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C / C++</span>
+                                <span class="skill-tag">NumPy</span>
+                                <span class="skill-tag">OpenCV</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="space-y-8 reveal" style="transition-delay: 200ms;">
+                        <div class="pcb-card p-8 rounded-2xl relative group h-full">
+                            <i data-lucide="cpu" class="text-[#ff5500] mb-6 w-8 h-8"></i>
+                            <h3 class="text-xl font-extrabold text-black mb-4">Hardware Config</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Arduino</span>
+                                <span class="skill-tag">ESP32</span>
+                                <span class="skill-tag">Raspberry Pi</span>
+                                <span class="skill-tag">NodeMCU</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="space-y-8 reveal" style="transition-delay: 300ms;">
+                        <div class="pcb-card p-8 rounded-2xl relative group h-full">
+                            <i data-lucide="brain-circuit" class="text-[#ff5500] mb-6 w-8 h-8"></i>
+                            <h3 class="text-xl font-extrabold text-black mb-4">AI & Tools</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">MATLAB</span>
+                                <span class="skill-tag">KiCad</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">Firebase</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="space-y-8 reveal" style="transition-delay: 400ms;">
+                        <div class="pcb-card p-8 rounded-2xl relative group h-full">
+                            <i data-lucide="mic" class="text-[#ff5500] mb-6 w-8 h-8"></i>
+                            <h3 class="text-xl font-extrabold text-black mb-4">Mentorship</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Public Speaking</span>
+                                <span class="skill-tag">Bootcamps</span>
+                                <span class="skill-tag">Syllabus Design</span>
+                                <span class="skill-tag">Tech Content</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-24 px-6 border-b border-black/5">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-extrabold mb-12 flex items-center gap-4 text-black reveal">
+                    <span class="mono text-[#ff5500] tracking-tighter">02.</span> Projects
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <article class="reveal">
+                        <div class="group relative overflow-hidden rounded-2xl bg-white border border-black/10 hover:border-[#ff5500]/50 transition-all p-1 shadow-sm hover:shadow-lg h-full flex flex-col">
+                            <div class="p-8 h-full flex flex-col">
+                                <div class="flex justify-between items-center mb-6">
+                                    <div class="w-12 h-12 bg-[#ff5500]/10 flex items-center justify-center rounded-lg shrink-0">
+                                        <i data-lucide="eye" class="text-[#ff5500]"></i>
+                                    </div>
+                                    <span class="mono text-[10px] text-slate-500 font-bold uppercase text-right leading-tight ml-2">Computer<br/>Vision</span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-4 group-hover:text-[#ff5500] transition-colors">YOLOv8 Weapon Detection</h3>
+                                <p class="text-slate-600 mb-6 leading-relaxed font-medium flex-grow">
+                                    A real-time AI security system using YOLOv8 models to identify firearms and knives in surveillance feeds.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="reveal" style="transition-delay: 150ms;">
+                        <div class="group relative overflow-hidden rounded-2xl bg-white border border-black/10 hover:border-[#ff5500]/50 transition-all p-1 shadow-sm hover:shadow-lg h-full flex flex-col">
+                            <div class="p-8 h-full flex flex-col">
+                                <div class="flex justify-between items-center mb-6">
+                                    <div class="w-12 h-12 bg-[#ff5500]/10 flex items-center justify-center rounded-lg shrink-0">
+                                        <i data-lucide="cloud" class="text-[#ff5500]"></i>
+                                    </div>
+                                    <span class="mono text-[10px] text-slate-500 font-bold uppercase text-right leading-tight ml-2">IoT &<br/>Networking</span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-4 group-hover:text-[#ff5500] transition-colors">Real-Time Sensor Logging</h3>
+                                <p class="text-slate-600 mb-6 leading-relaxed font-medium flex-grow">
+                                    NodeMCU-based monitoring system logging live sensor data to cloud dashboards with analytics.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 (New: Agentic AI) -->
+                    <article class="reveal" style="transition-delay: 300ms;">
+                        <div class="group relative overflow-hidden rounded-2xl bg-white border border-black/10 hover:border-[#ff5500]/50 transition-all p-1 shadow-sm hover:shadow-lg h-full flex flex-col">
+                            <div class="p-8 h-full flex flex-col">
+                                <div class="flex justify-between items-center mb-6">
+                                    <div class="w-12 h-12 bg-[#ff5500]/10 flex items-center justify-center rounded-lg shrink-0">
+                                        <i data-lucide="bot" class="text-[#ff5500]"></i>
+                                    </div>
+                                    <span class="mono text-[10px] text-slate-500 font-bold uppercase text-right leading-tight ml-2">Workflow<br/>Automation</span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-4 group-hover:text-[#ff5500] transition-colors">Agentic AI Workflows</h3>
+                                <p class="text-slate-600 mb-6 leading-relaxed font-medium flex-grow">
+                                    Designing and deploying autonomous agentic workflows and intelligent API integrations utilizing Make.com.
+                                </p>
+                                <a href="https://www.make.com" target="_blank" class="inline-flex items-center gap-2 text-[#ff5500] text-sm font-bold hover:underline mt-auto">
+                                    Explore Make.com <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bootcamps & Sessions Section -->
+        <section id="sessions" class="py-24 px-6 bg-black/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
+                    <div>
+                        <h2 class="text-4xl font-extrabold mono text-black"><span class="text-[#ff5500]">03.</span> Bootcamps & Sessions</h2>
+                        <p class="text-slate-600 mt-2 font-medium">Live sessions and masterclasses on AI, Embedded Systems, and IoT powered by Tech Roxx.</p>
+                    </div>
+                    <a href="https://www.youtube.com/@techroxxyt" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors shrink-0 shadow-md">
+                        <i data-lucide="youtube"></i>
+                        <span class="font-bold">Subscribe to Tech Roxx</span>
+                    </a>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 mb-8">
+                    <!-- YouTube Video Embed -->
+                    <div class="lg:col-span-2 reveal" style="transition-delay: 100ms;">
+                        <div class="pcb-card p-2 rounded-2xl bg-white">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/898lXaifnRs" title="Electra Cohort Q2 2026 Session" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="px-3 py-1 bg-red-100 text-red-600 text-xs font-bold uppercase rounded-full flex items-center gap-1">
+                                        <div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div> Live Session
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-2">Electra Cohort Q2 2026 Masterclass</h3>
+                                <p class="text-slate-600 text-sm font-medium">Deep dive into advanced electronics and systems architecture. Watch the full recorded session directly here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Channel Info Card -->
+                    <div class="lg:col-span-1 reveal" style="transition-delay: 200ms;">
+                        <div class="pcb-card p-8 rounded-2xl h-full flex flex-col justify-center bg-white border border-slate-200">
+                            <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mb-6 border-2 border-[#ff5500] shadow-sm">
+                                <i data-lucide="monitor-play" size="32" class="text-[#ff5500]"></i>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-black mb-4">Tech Roxx Education</h3>
+                            <p class="text-slate-600 mb-6 leading-relaxed font-medium">
+                                As the Founder & CEO of Tech Roxx, I actively conduct hands-on bootcamps and live sessions teaching:
+                            </p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-slate-700 font-bold"><i data-lucide="check-circle-2" class="text-[#ff5500]" size="20"></i> Artificial Intelligence</li>
+                                <li class="flex items-center gap-3 text-slate-700 font-bold"><i data-lucide="check-circle-2" class="text-[#ff5500]" size="20"></i> Embedded Systems</li>
+                                <li class="flex items-center gap-3 text-slate-700 font-bold"><i data-lucide="check-circle-2" class="text-[#ff5500]" size="20"></i> Internet of Things (IoT)</li>
+                            </ul>
+                            <a href="https://www.youtube.com/@techroxxyt" target="_blank" class="w-full py-3 border-2 border-[#ff5500] text-[#ff5500] font-bold rounded-lg hover:bg-[#ff5500] hover:text-white transition-all text-center">
+                                Visit Channel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Gallery Grid -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- S10 PCB Design -->
+                    <div class="pcb-card p-2 rounded-2xl reveal bg-white">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dqoF7qm1sOw" title="S10 PCB Design Masterclass" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-black mb-1">S10 Masterclass: PCB Design</h3>
+                            <p class="text-slate-600 text-xs font-medium">Electra Cohort hands-on PCB design and routing session.</p>
+                        </div>
+                    </div>
+
+                    <!-- Session 9 RTL Logic -->
+                    <div class="pcb-card p-2 rounded-2xl reveal bg-white" style="transition-delay: 100ms;">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/CaL3QzJcYmk" title="Session 9 RTL Logic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-black mb-1">Session 9: RTL Logic</h3>
+                            <p class="text-slate-600 text-xs font-medium">Deep dive into Register-Transfer Level abstraction and digital design.</p>
+                        </div>
+                    </div>
+
+                    <!-- Gen AI & CS Concepts -->
+                    <div class="pcb-card p-2 rounded-2xl reveal bg-white" style="transition-delay: 200ms;">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/-GoJ2HaVWrw" title="Gen AI and CS Concepts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-black mb-1">Gen AI & Core IT Concepts</h3>
+                            <p class="text-slate-600 text-xs font-medium">Awareness session on Generative AI applications and foundational tech concepts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-24 px-6 bg-[#ff5500]/5 border-y border-black/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-extrabold mono uppercase tracking-widest text-black"><span class="text-[#ff5500]">04.</span> Achievements</h2>
+                    <p class="text-slate-600 mt-2 font-medium">Recognitions and Visual Proof.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Text Side -->
+                    <div class="award-card p-8 md:p-12 rounded-3xl relative reveal overflow-hidden">
+                        <!-- KIYE Logo Circular Holder -->
+                        <div class="absolute top-6 right-6 w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#ff5500]/30 p-1 bg-white/90 backdrop-blur-md z-20 shadow-[0_4px_15px_rgba(255,85,0,0.15)] group overflow-hidden">
+                            <div class="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
+                                <img src="kiyefff (1).png" alt="KIYE Logo" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/80?text=KIYE'">
+                            </div>
+                        </div>
+
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <i data-lucide="award" size="120" class="text-[#ff5500]"></i>
+                        </div>
+                        
+                        <div class="relative z-10">
+                            <div class="inline-block px-4 py-1 rounded-full bg-[#ff5500] text-white text-[10px] font-extrabold mono uppercase mb-6 shadow-sm">
+                                Distinguished Award
+                            </div>
+                            <h3 class="text-3xl font-extrabold text-black mb-4 leading-tight">Best Student Coordinator Award</h3>
+                            <p class="text-[#ff5500] font-extrabold text-lg mb-6">Vigyan Vaibhav 2K25</p>
+                            
+                            <div class="space-y-4 text-slate-700 font-medium">
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="user-check" class="text-[#ff5500] shrink-0 mt-1"></i>
+                                    <p class="leading-relaxed text-sm">
+                                        Presented to Hemanth Goud Burra at <span class="text-black font-bold">Vigyan Vaibhav 2K25</span> by <span class="text-black font-bold">KIYE</span>.
+                                    </p>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="medal" class="text-[#ff5500] shrink-0 mt-1"></i>
+                                    <p class="leading-relaxed text-sm">
+                                        Received from <span class="text-black font-bold">Dr. G. Satheesh Reddy</span> (Former Chairman, DRDO).
+                                    </p>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="calendar" class="text-[#ff5500] shrink-0 mt-1"></i>
+                                    <p class="leading-relaxed text-sm">
+                                        Actively coordinating since <span class="text-black font-bold">March 2023</span>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Squircle Image Gallery Side -->
+                    <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 200ms;">
+                        <!-- Ceremony Card - SEO focused alt text -->
+                        <div class="squircle-card shadow-lg border border-slate-200">
+                            <img src="ghjkjhbnhbnjhbn.jpg" onerror="this.src='https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?fit=crop&w=300&h=300'" alt="Hemanth Goud Burra receiving Best Student Coordinator Award from Dr. G. Satheesh Reddy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                <p class="text-[9px] mono text-white font-bold tracking-wider">Ceremony Proof</p>
+                            </div>
+                        </div>
+                        <!-- Certificate Card - SEO focused alt text -->
+                        <div class="squircle-card shadow-lg border border-slate-200">
+                            <img src="certitititi.jpg" onerror="this.src='https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?fit=crop&w=300&h=300'" alt="Best Student Coordinator Certificate awarded to Hemanth Goud Burra">
+                            <div class="absolute top-4 right-4 bg-white/90 p-2 rounded-full border border-[#ff5500]/40 backdrop-blur shadow-sm">
+                                <i data-lucide="check-circle" class="text-[#ff5500] w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="py-24 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-extrabold mb-16 text-center text-black reveal"><span class="mono text-[#ff5500] tracking-tighter">05.</span> Experience & Education</h2>
+                <div class="space-y-12">
+                    
+                    <!-- MTECH VLSI ROLE -->
+                    <div class="relative pl-12 border-l-2 border-slate-300 reveal">
+                        <div class="absolute -left-2.5 top-0 w-5 h-5 bg-[#ff5500] rounded-full shadow-[0_0_10px_rgba(255,85,0,0.5)] border-2 border-white"></div>
+                        <span class="mono text-xs text-[#ff5500] font-bold block mb-2 uppercase">Aug 2026 — Present</span>
+                        <h4 class="text-xl font-extrabold text-black">MTech in VLSI (Master of Technology)</h4>
+                        <p class="text-[#ff5500] mb-3 font-bold">Anurag University</p>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-2xl font-medium">
+                            Pursuing an advanced degree specializing in Very Large Scale Integration (VLSI) design, focusing on core electronics, advanced semiconductor architecture, and systems engineering.
+                        </p>
+                    </div>
+
+                    <!-- TECH ROXX ROLE -->
+                    <div class="relative pl-12 border-l-2 border-slate-300 reveal" style="transition-delay: 100ms;">
+                        <div class="absolute -left-2.5 top-0 w-5 h-5 bg-slate-300 border-2 border-white rounded-full"></div>
+                        <span class="mono text-xs text-slate-500 font-bold block mb-2 uppercase">12 Nov 2025 — Present</span>
+                        <h4 class="text-xl font-extrabold text-black">Founder & CEO</h4>
+                        <p class="text-slate-600 mb-3 font-bold">Tech Roxx</p>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-2xl font-medium">
+                            Leading an educational tech startup focusing on next-generation engineering skills. Conducting comprehensive bootcamps, workshops, and live YouTube sessions covering Artificial Intelligence, Embedded Systems, and Internet of Things (IoT).
+                        </p>
+                    </div>
+
+                    <!-- COMPLETED AB TECHVILLE ROLE -->
+                    <div class="relative pl-12 border-l-2 border-slate-300 reveal" style="transition-delay: 200ms;">
+                        <div class="absolute -left-2.5 top-0 w-5 h-5 bg-slate-300 border-2 border-white rounded-full"></div>
+                        <span class="mono text-xs text-slate-500 font-bold block mb-2 uppercase">3 Feb 2026 — May 2026</span>
+                        <h4 class="text-xl font-extrabold text-black">Technical Associate</h4>
+                        <p class="text-slate-600 mb-4 font-bold">AB Techville</p>
+                    </div>
+
+                    <!-- HR INTERN ROLE -->
+                    <div class="relative pl-12 border-l-2 border-slate-300 reveal" style="transition-delay: 300ms;">
+                        <div class="absolute -left-2.5 top-0 w-5 h-5 bg-slate-300 border-2 border-white rounded-full"></div>
+                        <span class="mono text-xs text-slate-500 font-bold block mb-2 uppercase">Aug 2025 — Oct 2025</span>
+                        <h4 class="text-xl font-extrabold text-black">HR Intern Team Lead</h4>
+                        <p class="text-slate-600 mb-4 font-bold">GAO Tek Inc.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Resources Section -->
+        <section id="resources" class="py-24 px-6 border-t border-black/5 bg-[#e8ecf1]">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-12 reveal">
+                    <h2 class="text-4xl font-extrabold mono text-black"><span class="text-[#ff5500]">06.</span> Recommended Resources</h2>
+                    <p class="text-slate-600 mt-2 font-medium">Curated learning platforms and materials for engineering & tech aspirants.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- AWS -->
+                    <a href="https://github.com/kananinirav/AWS-Certified-Cloud-Practitioner-Notes" target="_blank" class="pcb-card p-6 rounded-2xl group reveal flex flex-col h-full bg-white hover:-translate-y-1">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[#ff5500]/10 flex items-center justify-center rounded-lg text-[#ff5500] group-hover:scale-110 transition-transform">
+                                <i data-lucide="cloud"></i>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-black group-hover:text-[#ff5500] transition-colors">AWS Cloud Practitioner</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm font-medium">Excellent open-source notes repository by Kanani for mastering foundational AWS Cloud concepts.</p>
+                    </a>
+
+                    <!-- Microchip University -->
+                    <a href="https://mu.microchip.com/" target="_blank" class="pcb-card p-6 rounded-2xl group reveal flex flex-col h-full bg-white hover:-translate-y-1" style="transition-delay: 100ms;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[#ff5500]/10 flex items-center justify-center rounded-lg text-[#ff5500] group-hover:scale-110 transition-transform">
+                                <i data-lucide="cpu"></i>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-black group-hover:text-[#ff5500] transition-colors">Microchip University</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm font-medium">Highly recommended specialized learning portal for all aspirants of core electronics and embedded systems.</p>
+                    </a>
+
+                    <!-- Altium Education -->
+                    <a href="https://education.altium.com/" target="_blank" class="pcb-card p-6 rounded-2xl group reveal flex flex-col h-full bg-white hover:-translate-y-1" style="transition-delay: 200ms;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[#ff5500]/10 flex items-center justify-center rounded-lg text-[#ff5500] group-hover:scale-110 transition-transform">
+                                <i data-lucide="layers"></i>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-black group-hover:text-[#ff5500] transition-colors">Altium Education</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm font-medium">The absolute best starting point and course material for beginners looking to learn professional PCB Design.</p>
+                    </a>
+
+                    <!-- Cisco NetAcad -->
+                    <a href="https://www.netacad.com/catalogs/learn" target="_blank" class="pcb-card p-6 rounded-2xl group reveal flex flex-col h-full bg-white hover:-translate-y-1" style="transition-delay: 300ms;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[#ff5500]/10 flex items-center justify-center rounded-lg text-[#ff5500] group-hover:scale-110 transition-transform">
+                                <i data-lucide="network"></i>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-black group-hover:text-[#ff5500] transition-colors">Cisco NetAcad</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm font-medium">Explore top-tier foundational courses and modules in networking, systems, and global IT infrastructure.</p>
+                    </a>
+
+                    <!-- IBM SkillsBuild -->
+                    <a href="https://skillsbuild.org/" target="_blank" class="pcb-card p-6 rounded-2xl group reveal flex flex-col h-full bg-white hover:-translate-y-1" style="transition-delay: 400ms;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[#ff5500]/10 flex items-center justify-center rounded-lg text-[#ff5500] group-hover:scale-110 transition-transform">
+                                <i data-lucide="briefcase"></i>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-black group-hover:text-[#ff5500] transition-colors">IBM SkillsBuild</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm font-medium">A massive free digital learning platform offering badges and training to develop your technology and professional skills.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 px-6 bg-black/5">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h2 class="text-5xl font-extrabold mb-8 tracking-tighter text-black">Ready to <span class="text-[#ff5500]">Collaborate?</span></h2>
+                <p class="text-slate-600 font-medium mb-12 max-w-lg mx-auto leading-relaxed">
+                    Whether you're looking for engineering solutions or a tech mentorship bootcamp, my signals are always on.
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-6 justify-center mb-16">
+                    <a href="mailto:hemanthbhg486@gmail.com" class="pcb-card bg-white p-4 rounded-xl flex items-center gap-3 px-8 transition-transform hover:-translate-y-1">
+                        <i data-lucide="mail" class="text-[#ff5500]"></i>
+                        <span class="mono text-sm font-bold text-black">hemanthbhg486@gmail.com</span>
+                    </a>
+                </div>
+
+                <div class="flex justify-center gap-10">
+                    <a href="https://github.com/Hemanthbhgx11" target="_blank" class="text-slate-600 hover:text-[#ff5500] transition-colors" title="Hemanth Goud Burra on GitHub"><i data-lucide="github" size="28"></i></a>
+                    <a href="https://www.linkedin.com/in/hemanth-goud-burra" target="_blank" class="text-slate-600 hover:text-[#ff5500] transition-colors" title="Hemanth Goud Burra on LinkedIn"><i data-lucide="linkedin" size="28"></i></a>
+                    <a href="https://www.youtube.com/@techroxxyt" target="_blank" class="text-slate-600 hover:text-[#ff5500] transition-colors" title="Tech Roxx on YouTube"><i data-lucide="youtube" size="28"></i></a>
+                    <a href="https://www.instagram.com/hemanth_bhg_x11/" target="_blank" class="text-slate-600 hover:text-[#ff5500] transition-colors" title="Hemanth Goud Burra on Instagram"><i data-lucide="instagram" size="28"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t border-black/5 text-center">
+        <p class="mono text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+            © 2026 Hemanth Goud Burra • Designed for Peak Performance
+        </p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                // Updated scroll logic for Light Mode background
+                nav.classList.add('py-1', 'bg-[#e8ecf1]/95', 'shadow-sm');
+                nav.classList.remove('bg-[#e8ecf1]/90');
+            } else {
+                nav.classList.add('bg-[#e8ecf1]/90');
+                nav.classList.remove('py-1', 'bg-[#e8ecf1]/95', 'shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>
